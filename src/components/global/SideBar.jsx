@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import { ProSidebarProvider, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography } from "@mui/material";
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 const Item = ({ title, icon, selected, setSelected }) => {
   return (
@@ -11,15 +10,16 @@ const Item = ({ title, icon, selected, setSelected }) => {
       active={selected === title}
       style={{
         color: selected === title ? "green" : null,
-        margin: "15px 0 5px 45px"
+        margin: "15px 0 5px 45px",
       }}
       onClick={() => setSelected(title)}
       // icon={icon}
     >
       <Box display="flex" justifyContent="space-between">
-
-      <Typography variant="h6" sx={{fontWeight:"lighter"}}>{title}</Typography>
-      <IconButton>{icon}</IconButton>
+        <Typography variant="h6" sx={{ fontWeight: "lighter" }}>
+          {title}
+        </Typography>
+        <IconButton>{icon}</IconButton>
       </Box>
     </MenuItem>
   );
@@ -75,19 +75,29 @@ const SideBar = () => {
                     display="flex"
                     justifyContent="center"
                     alignItems="center"
-                    backgroundColor="lightgray"
+                    backgroundColor="rgb(242,243,245)"
                     borderRadius="10px"
                     marginLeft="10px"
-                    height="50%"
-                    padding="20px 0px 20px 0px"
+                    padding="24px 0px 24px 0px"
                   >
-                    <PersonOutlinedIcon />
-                    <Typography variant="h6" sx={{ ml: 2 }}>
+                    <span
+                      style={{
+                        height: "30px",
+                        width: "30px",
+                        backgroundColor: "rgb(196,205,213)",
+                        borderRadius: "50%",
+                        display: "inline-block",
+                      }}
+                    ></span>
+                    <Typography variant="h6" sx={{ ml: 3, fontWeight: "550" }}>
                       Ananya Singh
                     </Typography>
                   </Box>
                 </Box>
-                <Typography variant="h6" sx={{ m: "15px 0 5px 20px", fontWeight: 'bold' }}>
+                <Typography
+                  variant="h6"
+                  sx={{ m: "15px 0 5px 20px", fontWeight: "bold" }}
+                >
                   PEOPLE CARE SYSTEM
                 </Typography>
                 <Item
@@ -95,33 +105,36 @@ const SideBar = () => {
                   selected={selected}
                   setSelected={setSelected}
                 />
-                <Typography variant="h6" sx={{ m: "15px 0 5px 20px", fontWeight: 'bold' }}>
+                <Typography
+                  variant="h6"
+                  sx={{ m: "15px 0 5px 20px", fontWeight: "bold" }}
+                >
                   MANAGEMENT
                 </Typography>
                 <Item
                   title="Employee"
                   selected={selected}
                   setSelected={setSelected}
-                  icon={<ChevronRightIcon/>}
+                  icon={<ChevronRightIcon />}
                 />
                 <Item
                   title="Attendance"
                   selected={selected}
                   setSelected={setSelected}
-                  icon={<ChevronRightIcon/>}
+                  icon={<ChevronRightIcon />}
                 />
                 <Item
                   title="Leaves"
                   selected={selected}
                   setSelected={setSelected}
-                  icon={<ChevronRightIcon/>}
+                  icon={<ChevronRightIcon />}
                 />
 
                 <Item
                   title="Payroll"
                   selected={selected}
                   setSelected={setSelected}
-                  icon={<ChevronRightIcon/>}
+                  icon={<ChevronRightIcon />}
                 />
                 <Item
                   title="Separation"
